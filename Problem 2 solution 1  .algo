@@ -1,0 +1,20 @@
+ALGORITHM Pb1 S1
+VAR
+    sum: INTEGER :=0;
+    arr1, arr2 : ARRAY_OF INTEGER;
+    i,j:INTEGER;
+
+BEGIN
+    read (arr1);
+    read (arr2);
+    FOR i FROM 0 TO arr1.length-1 DO
+        FOR j FROM 0 TO arr2.length-1 DO
+            IF (arr1[i]=arr2[j]) THEN
+                sum:=sum+(arr1[i]*2)
+            END_IF
+        END_FOR
+    END_FOR
+    
+    Write(sum);
+
+END

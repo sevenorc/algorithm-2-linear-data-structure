@@ -1,0 +1,28 @@
+ALGORITHM Pb2 S2
+VAR
+    sum: INTEGER :=0;
+    arr1, arr2 : ARRAY_OF INTEGER;
+    i,j:INTEGER;
+    htab:HASH_TABLE<INTEGER,INTEGER>
+
+BEGIN
+    read (arr1);
+    read (arr2);
+    for i from 0 to arr1.length-1 do
+        htab.insert(arr1[i],1);
+    END_FOR
+    for j from 0 to arr2.length-1 do
+        IF (htab.lookup(arr2[j])=TRUE) THEN
+            htab.insert(arr2[j],2) ELSE
+            htab.insert(arr2[j],1);
+        END_IF
+    END_FOR
+    for i from 0 to arr1.length-1 do
+        IF (htab.get(arr1[i])=2) THEN
+            sum:=sum+(arr1[i]*2);
+        END_IF
+    END_FOR
+
+    Write(sum);
+
+END

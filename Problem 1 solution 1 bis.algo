@@ -1,0 +1,24 @@
+ALGORITHM Pb1 S1
+VAR
+    sum: INTEGER :=0;
+    arr1, arr2 : ARRAY_OF INTEGER;
+    i,j:INTEGER;
+
+BEGIN
+    read (arr1);
+    read(arr2);
+    for i from 0 to arr1.length-1 do
+        for j from 0 to arr2.length-1 do
+            if (arr1[i]=arr2[j]) THEN 
+                arr1[i]:=0
+                arr2[j]:=0
+            END_IF
+        END_FOR
+        sum:=sum+arr1[i]; //somme des éléments du premier tableau sans les doubles
+    END_FOR
+    for j from 0 to arr2.length-1 do
+        sum:=sum+arr2[j] //somme finale avec également les éléments du deuxième tableau sans les doubles
+    END_FOR
+    Write(sum);
+
+END

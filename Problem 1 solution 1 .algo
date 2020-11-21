@@ -1,0 +1,37 @@
+ALGORITHM Pb1 S1
+VAR
+    sum: INTEGER :=0;
+    arr1, arr2 : ARRAY_OF INTEGER;
+    i,j:INTEGER;
+    test:BOOLEAN:=true;
+
+BEGIN
+    read (arr1);
+    read (arr2);
+    FOR i FROM 0 TO arr1.length-1 DO
+        test:=true;
+        FOR j FROM 0 TO arr2.length-1 DO
+            IF (arr1[i]=arr2[j]) THEN
+                test:=false;
+            END_IF
+        END_FOR
+        IF (test=true) THEN
+            sum:=sum+arr1[i]
+        END_IF
+    END_FOR
+
+        FOR j FROM 0 TO arr2.length-1 DO
+        test:=true;
+        FOR i FROM 0 TO arr1.length-1 DO
+            IF (arr1[i]=arr2[j]) THEN
+                test:=false;
+            END_IF
+        END_FOR
+        IF (test=true) THEN
+            sum:=sum+arr2[j]
+        END_IF
+    END_FOR
+    
+    Write(sum);
+
+END
